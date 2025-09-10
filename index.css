@@ -1,0 +1,150 @@
+@font-face {
+    font-family: "Inter";
+    src:
+            local("Inter"),
+            url("./assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+    font-weight: 100 900;
+}
+
+:root {
+    --color-gray-900: #141414;
+    --color-gray-800: #1F1F1F;
+    --color-gray-700: #333333;
+
+    --color-gray-300: #cccccc;
+    --color-gray-200: #a1a1a1;
+    --color-gray-100: #eeeeee;
+
+    --color-white: #FFFFFF;
+
+    --color-blue: #519efb;
+    --color-blue-dark: #0066e6;
+    --color-green: #C4F82A;
+
+    --color-bg-primary: var(--color-gray-100);
+    --color-bg-secondary: var(--color-gray-200);
+    --color-bg-tertiary: var(--color-gray-300);
+
+    --color-highlight: var(--color-blue-dark);
+
+    --color-text-primary: var(--color-gray-900);
+    --color-text-secondary: var(--color-gray-100);
+    --color-text-highlight: var(--color-highlight);
+
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+
+    --font-size-base: 14px;
+    --fong-size-lg: 24px;
+
+    --space-50: 4px;
+    --space-100: 8px;
+    --space-150: 12px;
+    --space-200: 16px;
+    --space-300: 24px;
+    --space-500: 40px;
+
+    line-height: 150%;
+    letter-spacing: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-base);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    max-width: 27rem;
+
+    background-color: var(--color-bg-secondary);
+    padding: var(--space-500);
+    border-radius: var(--space-150);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-500);
+
+    box-shadow: var(--space-50) var(--space-100) 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+    width: 6rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+}
+
+.name-location {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-50);
+    text-align: center;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.location {
+    color: var(--color-text-highlight);
+    font-weight: 600;
+}
+
+.links {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-200);
+}
+
+.links > a {
+    transition: all 0.1s ease-in-out;
+
+    font-style: normal;
+    text-align: center;
+    font-weight: 600;
+    padding: var(--space-150);
+    border-radius: var(--space-100);
+    background-color: var(--color-bg-tertiary);
+}
+
+.links > a:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-text-secondary);
+}
+
+/*
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries#targeting_media_features
+   Many range features can be prefixed with "min-" or "max-" to express "minimum condition" or "maximum condition"
+   constraints. For example, this CSS will apply styles only if your browser's viewport width is equal to
+   or narrower than 768 pixels:
+ */
+@media only screen and (max-width: 768px) {
+    :root {
+        --font-size-base: 12px;
+    }
+
+    article {
+        max-width: 25rem;
+        padding: var(--space-300);
+    }
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root {
+        --color-bg-primary: var(--color-gray-900);
+        --color-bg-secondary: var(--color-gray-800);
+        --color-bg-tertiary: var(--color-gray-700);
+
+        --color-text-primary: var(--color-gray-100);
+        --color-text-secondary: var(--color-gray-900);
+
+        --color-highlight: var(--color-blue);
+    }
+}
