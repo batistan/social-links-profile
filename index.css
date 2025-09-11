@@ -112,9 +112,13 @@ address {
     font-style: normal;
     text-align: center;
     font-weight: 600;
-    padding: var(--space-150);
     border-radius: var(--space-100);
     background-color: var(--color-bg-tertiary);
+}
+.link > a {
+    padding: var(--space-150);
+    display: block;
+    height: 100%;
 }
 
 .link:hover {
