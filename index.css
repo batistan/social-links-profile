@@ -96,14 +96,17 @@ article {
     font-weight: 600;
 }
 
+address {
+    width: 100%;
+}
+
 .links {
     display: flex;
-    width: 100%;
     flex-direction: column;
     gap: var(--space-200);
 }
 
-.links > a {
+.link {
     transition: all 0.1s ease-in-out;
 
     font-style: normal;
@@ -114,7 +117,7 @@ article {
     background-color: var(--color-bg-tertiary);
 }
 
-.links > a:hover {
+.link:hover {
     background-color: var(--color-highlight);
     color: var(--color-text-secondary);
 }
